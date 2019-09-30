@@ -60,26 +60,51 @@ fractions fractions::_reduce(fractions& res) const{
     res.arr[1] =0;
   if(res.arr[0] >= res.arr[1])
     {
-      for(int i = res.arr[1]; i >= 1; i--)
-	{
-	  if(res.arr[0] % i == 0 && res.arr[1] % i == 0)
-	    {
-	      res.arr[0] = res.arr[0] / i;
-	      res.arr[1] = res.arr[1] / i;
-	    }
-	}
+      if(res.arr[1] > 0){
+	for(int i = res.arr[1]; i > 1; i--)
+	  {
+	    if(res.arr[0] % i == 0 && res.arr[1] % i == 0)
+	      {
+		res.arr[0] = res.arr[0] / i;
+		res.arr[1] = res.arr[1] / i;
+	      }
+	  }
+      }
+      else{
+	for(int i = res.arr[1]; i < -1; i++)
+	  {
+	    if(res.arr[0] % i == 0 && res.arr[1] % i == 0)
+	      {
+		res.arr[0] = res.arr[0] / (-i);
+		res.arr[1] = res.arr[1] / (-i);
+	      }
+	  }
+      }
     }
   
   if (res.arr[0] < res.arr[1])
     {
-      for(int i = res.arr[0]; i >= 1; i--)
+      if(res.arr[0] > 0)
 	{
-	  if(res.arr[0] % i == 0 && res.arr[1] % i == 0)
+	  for(int i = res.arr[0]; i > 1; i--)
 	    {
-	      res.arr[0] = res.arr[0] / i;
-	      res.arr[1] = res.arr[1] / i;
+	      if(res.arr[0] % i == 0 && res.arr[1] % i == 0)
+		{
+		  res.arr[0] = res.arr[0] / i;
+		  res.arr[1] = res.arr[1] / i;
+		}
 	    }
 	}
+      else{
+	for(int i = res.arr[0]; i < -1; i++)
+	  {
+	    if(res.arr[0] % i == 0 && res.arr[1] % i == 0)
+	      {
+		res.arr[0] = res.arr[0] / (-i);
+		res.arr[1] = res.arr[1] / (-i);
+	      }
+	  }
+      }
     }
   return result; 
 }
