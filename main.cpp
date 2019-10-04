@@ -5,67 +5,29 @@ int main() {
   fractions f;
   fractions f1;
   std::cout << "Введите первую дробь\n";
-  for(int i = 0; i < 2; i++)
-    f.set(i);
+  f._read(std::cin);
   std::cout << "Введите вторую дробь\n";
-  for(int i = 0; i < 2; i++)
-    f1.set(i);
+  f1._read(std::cin);
   std::cout << "Первая дробь\n";
-  for(int i = 0; i < 2; i++)
-    {
-      std::cout << f.get(i);
-      if(i < 1)
-	std:: cout << '/';
-    }
-  std::cout << "\n";
+  f._write(std::cout);
   std::cout << "Вторая дробь\n";
-  for(int i = 0; i < 2; i++)
-    {
-      std::cout << f1.get(i);
-      if(i < 1)
-	std:: cout << '/';
-    }
-  std::cout << "\n";
+  f1._write(std::cout);
   fractions sum = f._add(f1);
   sum._reduce(sum);
   std::cout << "Сумма\n";
-  for(int i = 0; i < 2; i++)
-    {
-      std::cout << sum.get(i);
-      if(i < 1)
-	std:: cout << '/';
-    }
-  std::cout << "\n";
+  sum._write(std::cout);
   fractions raz = f._sub(f1);
   raz._reduce(raz);
   std::cout << "Разность\n";
-  for(int i = 0; i < 2; i++)
-    {
-      std::cout << raz.get(i);
-      if(i < 1)
-	std:: cout << '/';
-    }
-  std::cout << "\n";
+  raz._write(std::cout);
   fractions pro = f._mult(f1);
   pro._reduce(pro);
   std::cout << "Произведение\n";
-  for(int i = 0; i < 2; i++)
-    {
-      std::cout << pro.get(i);
-      if(i < 1)
-	std:: cout << '/';
-    }
-  std::cout << "\n";
+  pro._write(std::cout);
   fractions del = f._div(f1);
   del._reduce(del);
   std::cout << "Частное\n";
-  for(int i = 0; i < 2; i++)
-    {
-      std::cout << del.get(i);
-      if(i < 1)
-	std:: cout << '/';
-    }
-  std::cout << "\n";
+  del._write(std::cout);
   f._sravn(f1);
  
 }

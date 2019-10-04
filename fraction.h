@@ -9,7 +9,9 @@ struct fractions{
 
   int get(int i);
   void set(int i);
-  
+
+  void _read(std::istream& is);
+  void _write(std::ostream& os) const;
   fractions _add(const fractions& dr) const;
   fractions _sub(const fractions& dr) const;
   fractions _mult(const fractions& dr) const;

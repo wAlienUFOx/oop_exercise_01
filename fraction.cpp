@@ -10,6 +10,19 @@ void fractions::set(int i){
   std::cin >> arr[i];
 }
 
+void fractions::_read(std::istream& is){
+  for(int i = 0; i < 2; i++)
+    is >> arr[i];
+}
+void fractions::_write(std::ostream& os) const{
+  for(int i = 0; i < 2; i++)
+    {
+      os << arr[i];
+      if(i < 1)
+	os << '/';
+    }
+  os << '\n';
+}
 fractions fractions::_add(const fractions& dr) const{
   fractions result{};
   result.arr[0] = (arr[0] * dr.arr[1]) + (arr[1] * dr.arr[0]);
