@@ -13,21 +13,22 @@ int main() {
   std::cout << "Вторая дробь\n";
   f1._write(std::cout);
   fractions sum = f._add(f1);
-  sum._reduce(sum);
   std::cout << "Сумма\n";
   sum._write(std::cout);
   fractions raz = f._sub(f1);
-  raz._reduce(raz);
   std::cout << "Разность\n";
   raz._write(std::cout);
   fractions pro = f._mult(f1);
-  pro._reduce(pro);
   std::cout << "Произведение\n";
   pro._write(std::cout);
   fractions del = f._div(f1);
-  del._reduce(del);
   std::cout << "Частное\n";
   del._write(std::cout);
-  f._sravn(f1);
- 
+  int r = f._sravn(f1);
+  if (r == -1)
+    std::cout << "Первая дробь меньше\n";
+  else if (r == 1)
+    std::cout << "Первая дробь больше\n";
+  else
+    std::cout << "Дроби равны\n";
 }

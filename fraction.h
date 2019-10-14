@@ -7,17 +7,14 @@ struct fractions{
   fractions();
   fractions(int a, int b);
 
-  int get(int i);
-  void set(int i);
-
   void _read(std::istream& is);
   void _write(std::ostream& os) const;
   fractions _add(const fractions& dr) const;
   fractions _sub(const fractions& dr) const;
   fractions _mult(const fractions& dr) const;
   fractions _div(const fractions& dr) const;
-  fractions _reduce(fractions& res) const;
-  void _sravn(const fractions& dr) const;  
+  fractions _reduce();
+  int _sravn(const fractions& dr) const;  
 
 public:
   int arr[2];
